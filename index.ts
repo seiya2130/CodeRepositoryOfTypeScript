@@ -5,16 +5,33 @@ import './style.css';
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
-
-
-interface Person{
-  name: string,
-  age: number
+interface Enquete {
+  name?: string;
+  sex: string;
+  age: number;
 }
 
-function getPerson(person: Person){
+function getEnquete(enquete: Enquete) {
   //...
 }
 
-const person1 = getPerson({ age: 20 });
-const person2 = getPerson({ name: "Bob", age: 25 });
+const enquete1 = getEnquete({ sex: 'female', age: 20 }); // nameプロパティの指定が不要になる
+const enquete2 = getEnquete({ name: 'Bob', sex: 'male', age: 25 });
+
+type Car = {
+  //
+};
+
+type Train = {
+  //
+};
+
+type Airplane = {
+  //
+};
+
+type Vehicle = Car | Train | Airplane;
+
+let vehicle: Vehicle[] = [
+  // Car/Train/Airplaneしか配列に追加できない
+];
